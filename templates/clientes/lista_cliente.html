@@ -1,0 +1,9 @@
+<h1>Lista de Clientes</h1>
+<a href="/clientes/cadastrar/">Cadastrar Cliente</a>
+<ul>
+{% for cliente in clientes %}
+<li>{{ cliente.nome }} - {{ cliente.telefone }}</li>
+{% empty %}
+<li>Nenhum cliente cadastrado.</li>
+{% endfor %}
+</ul>
