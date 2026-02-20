@@ -1,9 +1,82 @@
-<h1>Lista de Clientes</h1>
-<a href="/clientes/cadastrar/">Cadastrar Cliente</a>
-<ul>
-{% for cliente in clientes %}
-<li>{{ cliente.nome }} - {{ cliente.telefone }}</li>
-{% empty %}
-<li>Nenhum cliente cadastrado.</li>
-{% endfor %}
-</ul>
+<<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Clientes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 16px;
+            background: #2c7be5;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #1a5fd1;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: #f8f9fa;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 5px solid #2c7be5;
+        }
+
+        .vazio {
+            color: #888;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📋 Lista de Clientes</h1>
+
+        <a href="/clientes/cadastrar/" class="btn">
+            + Cadastrar Cliente
+        </a>
+
+        <ul>
+            {% for cliente in clientes %}
+                <li>
+                    <strong>{{ cliente.nome }}</strong><br>
+                    📞 {{ cliente.telefone|default:"Sem telefone" }}
+                </li>
+            {% empty %}
+                <li class="vazio">Nenhum cliente cadastrado.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
