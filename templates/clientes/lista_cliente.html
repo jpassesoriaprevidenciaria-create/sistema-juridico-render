@@ -1,82 +1,33 @@
-<<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Lista de Clientes</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f6f9;
-            margin: 0;
-            padding: 40px;
-        }
+{% extends 'base.html' %}
 
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
+{% block title %}Clientes{% endblock %}
+{% block header %}Lista de Clientes{% endblock %}
 
-        h1 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-        }
+{% block content %}
+<div class="card">
+    <a href="/clientes/cadastrar/" class="btn">+ Novo Cliente</a>
 
-        .btn {
-            display: inline-block;
-            padding: 10px 16px;
-            background: #2c7be5;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-
-        .btn:hover {
-            background: #1a5fd1;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        li {
-            background: #f8f9fa;
-            margin-bottom: 10px;
-            padding: 15px;
-            border-radius: 6px;
-            border-left: 5px solid #2c7be5;
-        }
-
-        .vazio {
-            color: #888;
-            font-style: italic;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>📋 Lista de Clientes</h1>
-
-        <a href="/clientes/cadastrar/" class="btn">
-            + Cadastrar Cliente
-        </a>
-
-        <ul>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Data de Cadastro</th>
+            </tr>
+        </thead>
+        <tbody>
             {% for cliente in clientes %}
-                <li>
-                    <strong>{{ cliente.nome }}</strong><br>
-                    📞 {{ cliente.telefone|default:"Sem telefone" }}
-                </li>
+            <tr>
+                <td>{{ cliente.nome }}</td>
+                <td>{{ cliente.telefone|default:"-" }}</td>
+                <td>{{ cliente.data_cadastro|date:"d/m/Y H:i" }}</td>
+            </tr>
             {% empty %}
-                <li class="vazio">Nenhum cliente cadastrado.</li>
+            <tr>
+                <td colspan="3">Nenhum cliente cadastrado.</td>
+            </tr>
             {% endfor %}
-        </ul>
-    </div>
-</body>
-</html>
+        </tbody>
+    </table>
+</div>
+{% endblock %}
