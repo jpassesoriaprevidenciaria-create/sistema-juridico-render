@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Cliente(models.Model):
     nome = models.CharField(max_length=255)
     telefone = models.CharField(max_length=50, blank=True, null=True)
@@ -9,7 +10,6 @@ class Cliente(models.Model):
         return self.nome
 
 
-# 👇 ADICIONE A PARTIR DAQUI (embaixo do Cliente)
 class Processo(models.Model):
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, related_name='processos')
     numero = models.CharField(max_length=50)
