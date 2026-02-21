@@ -3,93 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Sistema Judiciário{% endblock %}</title>
+</head>
+<body style="margin:0; font-family: Arial, Helvetica, sans-serif; background:#eef1f5;">
 
-<style>
-    body {
-        margin: 0;
-        font-family: "Segoe UI", Arial, sans-serif;
-        background-color: #eef1f5;
-    }
+    <!-- TOPO PROFISSIONAL -->
+    <div style="background:#111827; color:white; padding:18px 30px; font-size:22px; font-weight:bold;">
+        ⚖️ Sistema Judiciário
+    </div>
 
-    .header {
-        background: linear-gradient(135deg, #111827, #1f2937);
-        color: white;
-        padding: 18px 30px;
-        font-size: 24px;
-        font-weight: 600;
-        letter-spacing: 0.5px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
+    <!-- MENU -->
+    <div style="background:#1f2937; padding:12px 30px;">
+        <a href="/" style="color:#e5e7eb; margin-right:25px; text-decoration:none; font-weight:500;">Dashboard</a>
+        <a href="/clientes/" style="color:#e5e7eb; margin-right:25px; text-decoration:none; font-weight:500;">Clientes</a>
+        <a href="/clientes/cadastrar/" style="color:#e5e7eb; text-decoration:none; font-weight:500;">Cadastrar Cliente</a>
+    </div>
 
-    .nav {
-        background: #1f2937;
-        padding: 12px 30px;
-        border-bottom: 1px solid #e5e7eb;
-    }
+    <!-- CONTEÚDO -->
+    <div style="padding:30px;">
+        <h2 style="margin-bottom:20px;">{% block header %}{% endblock %}</h2>
 
-    .nav a {
-        color: #e5e7eb;
-        text-decoration: none;
-        margin-right: 25px;
-        font-weight: 500;
-        font-size: 15px;
-        transition: 0.2s;
-    }
+        <div style="background:white; padding:25px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.06);">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
 
-    .nav a:hover {
-        color: #ffffff;
-    }
-
-    .container {
-        padding: 30px;
-    }
-
-    .card {
-        background: #ffffff;
-        padding: 25px;
-        border-radius: 12px;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-        border: 1px solid #e5e7eb;
-    }
-
-    .btn {
-        background: #111827;
-        color: white;
-        padding: 10px 18px;
-        text-decoration: none;
-        border-radius: 8px;
-        font-weight: 500;
-        display: inline-block;
-    }
-
-    .btn:hover {
-        background: #000000;
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        background: white;
-        margin-top: 15px;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-    }
-
-    th {
-        background: #f3f4f6;
-        padding: 14px;
-        text-align: left;
-        font-weight: 600;
-        color: #111827;
-    }
-
-    td {
-        padding: 14px;
-        border-bottom: 1px solid #f1f3f6;
-    }
-
-    tr:hover {
-        background-color: #f9fafb;
-    }
-</style>
+</body>
+</html>
