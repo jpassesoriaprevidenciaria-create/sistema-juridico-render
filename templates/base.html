@@ -4,30 +4,28 @@
     <meta charset="UTF-8">
     <title>{% block title %}Sistema Judiciário{% endblock %}
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
     <style>
         body {
             margin: 0;
-            font-family: 'Inter', sans-serif;
+            font-family: "Segoe UI", Arial, sans-serif;
             background-color: #f4f6f9;
         }
 
-        /* TOPO PROFISSIONAL */
+        /* TOPO JURÍDICO PROFISSIONAL */
         .topbar {
             background: #1c1f26;
-            color: white;
+            color: #ffffff;
             padding: 18px 30px;
             font-size: 22px;
-            font-weight: 600;
+            font-weight: bold;
             letter-spacing: 0.5px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
         }
 
-        /* MENU HORIZONTAL */
+        /* MENU PROFISSIONAL */
         .navbar {
             background: #2c313c;
             padding: 12px 30px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
         }
 
         .navbar a {
@@ -35,7 +33,7 @@
             text-decoration: none;
             margin-right: 25px;
             font-weight: 500;
-            transition: 0.2s;
+            font-size: 15px;
         }
 
         .navbar a:hover {
@@ -47,12 +45,12 @@
             padding: 30px;
         }
 
-        /* CARDS PROFISSIONAIS */
+        /* CARD ESTILO SOFTWARE JURÍDICO */
         .card {
             background: #ffffff;
             padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.06);
         }
 
         /* BOTÕES */
@@ -61,77 +59,47 @@
             background: #1c1f26;
             color: white;
             padding: 10px 18px;
-            border-radius: 8px;
+            border-radius: 6px;
             text-decoration: none;
             font-weight: 500;
-            transition: 0.2s;
         }
 
         .btn:hover {
             background: #000000;
         }
 
-        /* TABELA ELEGANTE */
+        /* TABELA PROFISSIONAL */
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 15px;
             background: white;
-            border-radius: 8px;
-            overflow: hidden;
         }
 
         th {
             background: #f1f3f6;
             padding: 12px;
             text-align: left;
-            font-weight: 600;
         }
 
         td {
             padding: 12px;
             border-bottom: 1px solid #eee;
         }
-
-        /* FORMULÁRIOS */
-        form input, form select, form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            margin-bottom: 15px;
-            border: 1px solid #dcdfe4;
-            border-radius: 8px;
-        }
-
-        button[type="submit"] {
-            background: #1c1f26;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        button[type="submit"]:hover {
-            background: #000;
-        }
     </style>
 </head>
 <body>
 
-    <!-- CABEÇALHO -->
     <div class="topbar">
         ⚖️ Sistema Judiciário
     </div>
 
-    <!-- MENU -->
     <div class="navbar">
         <a href="/">Dashboard</a>
         <a href="/clientes/">Clientes</a>
         <a href="/clientes/cadastrar/">Cadastrar Cliente</a>
     </div>
 
-    <!-- CONTEÚDO DINÂMICO -->
     <div class="container">
         <h2>{% block header %}{% endblock %}</h2>
 
