@@ -1,7 +1,77 @@
-<h1>Cadastrar Cliente</h1>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Salvar</button>
-</form>
-<a href="/clientes/">Voltar</a>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar Cliente</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #1f2937;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input, select, textarea {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .btn {
+            padding: 12px;
+            background: #16a34a;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #15803d;
+        }
+
+        .voltar {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #2563eb;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>➕ Cadastrar Cliente</h1>
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn">Salvar Cliente</button>
+        </form>
+
+        <a href="/clientes/" class="voltar">← Voltar para lista</a>
+    </div>
+</body>
+</html>

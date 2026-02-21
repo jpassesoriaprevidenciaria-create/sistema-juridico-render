@@ -1,2 +1,75 @@
-<h1>Sistema Jurídico</h1>
-<a href="/clientes/">Ver Clientes</a>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema Jurídico</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+        }
+
+        .header {
+            background: #1f2937;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            display: grid;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .card h2 {
+            margin-bottom: 10px;
+            color: #1f2937;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 18px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>⚖️ Sistema Jurídico</h1>
+        <p>Gestão de Clientes</p>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h2>👥 Clientes</h2>
+            <p>Gerencie os clientes cadastrados no sistema.</p>
+            <a href="/clientes/" class="btn">Ver Clientes</a>
+        </div>
+
+        <div class="card">
+            <h2>➕ Novo Cliente</h2>
+            <p>Cadastre um novo cliente no sistema.</p>
+            <a href="/clientes/cadastrar/" class="btn">Cadastrar Cliente</a>
+        </div>
+    </div>
+</body>
+</html>
