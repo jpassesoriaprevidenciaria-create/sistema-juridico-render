@@ -16,9 +16,20 @@ def home(request):
 
 
 def lista_clientes(request):
-    clientes = Cliente.objects.all().order_by('-id')
-    return render(request, 'clientes/lista_cliente.html', {'clientes': clientes})
+    busca = request.GET.get('q', '')
 
+    if busca:
+        clientes = Cliente.objects.filter(nome__icontains=busca).order_by('-id')
+    else:
+        clientes = Cliente.objects.all().order_by('-id')
+
+    context = {
+        'clientes': clientes,
+        'busca': busca,
+        'total': clientes.count()
+    }
+
+    return render(request, 'clientes/lista_cliente.html', context)
 
 def cadastrar_cliente(request):
     form = ClienteForm(request.POST or None)
